@@ -6,6 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 
 import MyButton from './MyButton.vue';
 import Welcome from './Welcome.vue';
+import draw_in from './draw_in.vue';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
   components: { Welcome },
@@ -30,6 +31,11 @@ storiesOf('Button', module)
     components: { MyButton },
     template: '<my-button @click="action">😎 👍 💯 💯</my-button>',
     methods: { action: action('clicked') },
+  }))
+
+  .add('Hi', () => ({
+    components: { draw_in },
+    template: '<draw_in text="Hi"></draw_in>'
   }));
 
 /* eslint-enable react/react-in-jsx-scope */
