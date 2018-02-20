@@ -33,9 +33,13 @@ storiesOf('Button', module)
     methods: { action: action('clicked') },
   }))
 
-  .add('Hi', () => ({
-    components: { draw_in },
-    template: '<draw_in text="Hi"></draw_in>'
-  }));
+  .add('Hi', () => {
+    let word = 'Hel';
+    let color = 'yellow';
+    return {
+      components: { draw_in },
+      template: `<draw_in text='Hello' color='green'></draw_in>`
+    }
+  });
 
 /* eslint-enable react/react-in-jsx-scope */

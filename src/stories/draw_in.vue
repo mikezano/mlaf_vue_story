@@ -1,8 +1,9 @@
 <template lang="pug">
 .draw-in
+	div {{styleObject}}
 	svg.draw-in__svg
 		symbol#text
-			text.draw-in__ads( x="50%" y="98%" text-anchor="middle") {{text}}
+			text.draw-in__ads( x="50%" y="98%" text-anchor="middle" :style="styleObject") {{text}}
 		use.text(xlink:href='#text')
 	.draw-in__presents Presents
 	.draw-in__dots
@@ -14,13 +15,16 @@
 <script>
 	export default{
 		name: "draw_in",
-		props:['text'],
+		props:['text', 'color'],
 		data(){
 			return {
+				styleObject:{
+					stroke: this.color || 'black',
+					fill: this.color || 'black'
+				}
 				
 			}
 		}
-
 	}
 </script>
 
@@ -121,5 +125,5 @@
 }//draw_in end
 
 
-@include draw_in(orange);
+@include draw_in(red);
 </style>
